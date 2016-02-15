@@ -27,9 +27,8 @@ plotdata <- hpc[daterange, ]
 
 #CREATE PLOT
 #open 480x480 pixel canvas
-windows(width=6.4, height=6.4, bg="white")
+png(file="plot2.png", units="px", width=480, height=480)
 
 #create histogram of Global Active Power for sample dates and copy to a png file
 hist(plotdata[,3], main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
-dev.print(png, file="plot1.png", width=480, height=480)
 dev.off()

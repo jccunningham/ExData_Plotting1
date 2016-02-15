@@ -27,10 +27,8 @@ plotdata <- hpc[daterange, ]
 
 #CREATE PLOT
 #open 480x480 pixel canvas
-windows(width=6.4, height=6.4, bg="white")
+png(file="plot2.png", units="px", width=480, height=480)
 
 #plot Global Active Power by timeline
-plot(plotdata$DateTime, plotdata[,3], type="l",  ylab="Global Active Power (kilowatts)", xlab="",yaxt="n")
-axis(2,cex.axis=.75)
-dev.print(png, file="plot2.png", width=480, height=480)
+plot(plotdata$DateTime, plotdata[,3], type="l",  ylab="Global Active Power (kilowatts)", xlab="")
 dev.off()
